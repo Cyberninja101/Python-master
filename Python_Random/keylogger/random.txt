@@ -1,0 +1,14 @@
+f(x,y,z) = abx^2y^2z^4 + bcx^3z^2 - 32ax^4y
+d/dx = 2abxy^2z^4 + 3bcx^2z^2 - 128ax^3y
+d^2/dx^2 = 2aby^2z^4 + 6bcxz^2 - 384ax^2y
+d^2/dy^2 
+1st order: 2abx^2yz^4 - 32ax^4
+answer: 2abx^2z^4
+d^2/dzdy
+1st order: 4abx^2y^2z^3 + 2bcx^3z
+answer: 8abx^2yz^3
+d^2/dzdy
+answer: 8abx^2yz^3
+d^2/dxdy
+1st order: 2abxy^2z^4 + 3bcx^2z^2 - 128ax^3y
+answer: 4abxyz^4 -128ax^3 

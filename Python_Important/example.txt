@@ -1,0 +1,7 @@
+x = [1,2,3]
+people = ["Zenchang", "Alex"]
+Zenchang_info = {"age": 14, "color": "black", "food": "sushi", "cousins": ["Madison", "Riley", "Harper", "Elise"], "test_scores": {"math": 99, "history": 86, "science": 92}}
+Alex_info = {"age": 25, "color": "red", "food": "pasta", "cousins": ["Venetia", "Jennifer", "Jill", "Jonathan"], "test_scores": {"math": 42, "history": 13, "science": 5}}
+
+
+parameters = [0,100,1]

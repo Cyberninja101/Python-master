@@ -1,0 +1,126 @@
+
+import time
+import sys
+import random
+
+
+# Initialize player
+class Player:
+    def __init__(self):
+        self.name = ''
+        self.ability = ''
+        self.hp = 100
+        self.modifiers = 1
+
+# Define print functions
+def delay_print(delay, text):
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(delay)
+
+
+def delay_input(delay, text):
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(delay)
+    usr_input = input('')
+    return usr_input
+
+
+
+
+# Create Instances
+myPlayer = Player()
+
+# Start player settings
+
+delay_print(0.05, "Welcome to the medical AI text101 made by Zenchang Sun. ")
+delay_print(0.05,"In this world, you can choose what actions you take.\n")
+
+
+myPlayer.name = delay_input(0.05, 'What is your name: ')
+delay_print(0.05, 'You decide to play the text adventure game.')
+input_ability = delay_input(0.05,'\nTo choose what ability you have, press 1 for hacking or 2 for spreading viruses: ')
+
+if str(input_ability) != '1' and str(input_ability) != '2':
+    delay_print(0.05, "\nSince you did not choose a valid response, you will get the ability to hack.")
+    input_ability = 1
+
+ability_key = {'1': 'hack', '2': 'virus'}
+
+
+myPlayer.ability = ability_key.get(str(input_ability))
+
+Start_Museum = False
+
+# Part 1, Start story
+delay_print(0.05,f"\nGood Afternoon {myPlayer.name}. You are in NYC in the year 2030. ")
+if myPlayer.ability == "hack":
+    input1 = delay_input(0.05, f"\nTo not hack the central AI, press 1. To hack it, press 2. : ")
+    options1_2 = [1,2]
+    
+    while int(input1) not in options1_2:
+        input1 = delay_input(0.05, f"\nTo not hack the central AI, press 1. To hack it, press 2. : ")
+else:
+    input1 = delay_input(0.05, f"\nTo stay 6 feet away from people at all times, press 1. To spread your virus, press 2. : ")
+    options1_2 = [1,2]
+    
+    while int(input1) not in options1_2:
+        input1 = delay_input(0.05, f"\nTo stay 6 feet away from people at all times, press 1. To spread your virus, press 2. : ")
+
+if int(input1) == 1:
+    # Part A
+    delay_print(0.05, "\nThe Clean Earth Association congratulates you for making the right choice.")
+
+    delay_print(0.05, "\nAs a reward, they will give you a free trip to the AI medical museum in New York City.\n")
+    input2 = delay_input(0.05,"\nPress 1 to accept the invitation, and 2 to decline continue going home: ")
+    if int(input2) == 1:
+        delay_print(0.05, "\nThinking that this would be cool, you quickly accept.\nThey blindfold you and put you in a truck.")
+        delay_print(0.05, "\nAfter about an hour, you arrive at the museum.\n You quickly get out and see your surroundings.")
+        delay_print(0.05, "\nThe guide just says to go in and explore.")
+        Start_Museum = True
+    elif int(input2) == 2:
+        delay_print(0.05, "\nYou go home sad that you missed such a wonderful opportunity. \nNext time you have this chance, you decide to take it.")
+        delay_print(0.05, "\n[Your story ends]")
+
+elif int(input1) == 2:
+    # Part B
+    delay_print(0.05, "\nThe AI Police car starts to chase you. ")
+    inputB = delay_input(0.05,"To try to run away, press 1. To Surrender, press 2: ")
+    if int(inputB) == 1:
+        delay_print(0.05, "\nYou run into the woods behind you. \nThe AI robots quickly come out of the car and start to chase you.\n")
+        delay_print(0.05, "The woods get thinner as you keep running. Ahead, you see light. \n")
+        delay_print(0.05, "Out in the clearing, you see the great AI medical Museum.")
+        Start_Museum = True
+    elif int(inputB) == 2:
+        delay_print(0.05, "Now you get put in jail for life for littering. \nYou should have done something else.")
+        delay_print(0.05, "\n[Your story ends]")
+        # Story Ends
+    
+
+
+Start_Museum = True
+# Start Inside museum
+if Start_Museum:
+    delay_print(0.05, '\n \nYou start to walk into the museum. \nSurprisingly, no one notices you.\n')
+    delay_print(0.05, 'When you get to the inside, it doesn\'t look that much like a museum, more like a factory')
+    delay_print(0.05, '\nYou decide to follow a group on a tour. They look similar to you, so you won\'t stand out')
+    inputA = delay_input(0.05, '\nTo continue with the tour, press 1. To ask how the AI predicts Comas, press 2: ')
+    if int(inputA) == 1:
+        delay_print(0.05, '\nYou decide to play it safe. You later learn from another tourist that they predict it through a methodical process.')
+        delay_print(0.05, '\nThe AI for predicting the chances of someone waking up from a coma was created by the CHinese Academy of Sciences.')
+        delay_print(0.05, '\nFirst, they give the AI some parameters like age, how long they have been in the coma, and how they got in the coma.')
+        delay_print(0.05, '\nUsing all of these parameters, the AI can predict the odds of the patient waking up.')
+        delay_print(0.05, "\nThis tool is very useful for the patient's family because it can help them decided whether or not to let the patient go.")
+
+    if int(inputA) == 2:
+        delay_print(0.05, '\nYou decide to play it safe. You later learn from another tourist that they predict it through a methodical process.')
+        delay_print(0.05, '\nThe AI for predicting the chances of someone waking up from a coma was created by the CHinese Academy of Sciences.')
+        delay_print(0.05, '\nFirst, they give the AI some parameters like age, how long they have been in the coma, and how they got in the coma.')
+        delay_print(0.05, '\nUsing all of these parameters, the AI can predict the odds of the patient waking up.')
+        delay_print(0.05, "\nThis tool is very useful for the patient's family because it can help them decided whether or not to let the patient go.")
+
+    delay_print(0.05, '\nNow, the tour is finished. Hope you learned something.')
+
